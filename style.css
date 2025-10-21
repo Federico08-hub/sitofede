@@ -200,7 +200,7 @@ background: linear-gradient(90deg,#259bab,#b541f4,#6c3bff,#259bab);
     animation: animate 8s linear infinite;
 }
 iframe{
-    margin-top:13%;
+    margin-top:7%;
 }
 .contenitore {
     display: flex;
