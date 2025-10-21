@@ -136,7 +136,7 @@ let data={
     Fin da giovane, sono stato affascinato dal modo in cui i computer funzionano e da come possono essere utilizzati per risolvere problemi complessi.
     Attualmente frequento l'ITI Severi di Padova, dove sto approfondendo le mie conoscenze in programmazione, reti e sviluppo software.
     Per ulteriori informazioni &egrave; possibile contattarmi tramite la mail <u>chenxin20080501@gmail.com</u> oppure tramite altri contatti forniti nel CV.</p>`
-    ,video:`<iframe width="560" height="315" src="https://www.youtube.com/embed/fO2HcBKeOb4?si=jvpNs388-zlTJIEC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+    ,video:`https://www.youtube.com/embed/fO2HcBKeOb4?si=8x81H4Mr2fZFc8zB"`
   },
 
   english:{
@@ -186,7 +186,7 @@ let data={
     Since I was a child, I have been fascinated by how computers work and how they can be used to solve problems.
     I am currently attending the ITI Francesco Severi located in Padua, where I am expanding my knowledge in programming, networks, and software development.
     For other information, you can contact me through the email <u>chenxin20080501@gmail.com</u> or through other contacts provided in my CV.</p>`
-    ,video: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Tv-g2hVhpUo?si=YL0CGM0IBk4_lpuZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+    ,video: `https://www.youtube.com/embed/Z9vWGGDDBJA?si=ZOIUDA2_4V7Uv5C1"`
   }
 }
 function cambiaLingua(lang) {
@@ -222,11 +222,14 @@ function cambiaLingua(lang) {
     }
   
   });
-  const videoFrame = document.getElementById("video");
-
+  
+  const videoFrame = document.querySelector(".video");
   if (videoFrame && data[lang]['video']) {
-    videoFrame.src = `https://www.youtube.com/embed/${data[lang]['video']}`;
+    videoFrame.src = data[lang]['video'];
+    console.log("Inviato");
   }
+  if(videoFrame==null)
+    console.log("Non inviato");
 }
 
 
