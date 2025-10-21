@@ -68,7 +68,6 @@ ul.addEventListener('click', (e) => {
         if (el.classList.contains('visible') && entry.intersectionRatio === 0) {
           el.classList.remove('visible');
           el.setAttribute('aria-hidden', 'true');
-          console.log('Descrizione nascosta da IntersectionObserver:', el.id);
         }
       });
     }, { threshold: [0, 0.01] });
@@ -81,7 +80,6 @@ ul.addEventListener('click', (e) => {
         if (r.bottom < 0 || r.top > window.innerHeight) {
           d.classList.remove('visible');
           d.setAttribute('aria-hidden', 'true');
-          console.log('Descrizione nascosta da scroll fallback:', d.id);
         }
       });
     });
@@ -121,8 +119,8 @@ let data={
     </ul>
     </p>`,
     progetti: `<strong>PROGETTI PARTECIPATI:</strong><ul>
-      <li>MOVE</li>
-      <li>INFORMATICA X GIOCO</li>
+      <li>MOVE;</li>
+      <li>INFORMATICA X GIOCO.</li>
               </ul>`,
     certificati: `<strong>CERTIFICATI RICEVUTI:</strong><ul>
       <li>Certificato di sicurezza(2024);</li>
@@ -137,7 +135,8 @@ let data={
     su_di_me: `<p>Ciao sono Chen Federico Xin, uno studente appassionato di informatica e tecnologia. Sono molto felice di vederti sul mio sito web e vorrei condividere la mia storia.
     Fin da giovane, sono stato affascinato dal modo in cui i computer funzionano e da come possono essere utilizzati per risolvere problemi complessi.
     Attualmente frequento l'ITI Severi di Padova, dove sto approfondendo le mie conoscenze in programmazione, reti e sviluppo software.
-    Per ulteriori informazioni è possibile contattarmi tramite la mail <u>chenxin20080501@gmail.com</u> oppure tramite altri contatti forniti nel CV</p>`
+    Per ulteriori informazioni &egrave; possibile contattarmi tramite la mail <u>chenxin20080501@gmail.com</u> oppure tramite altri contatti forniti nel CV.</p>`
+    ,video:`<iframe width="560" height="315" src="https://www.youtube.com/embed/fO2HcBKeOb4?si=jvpNs388-zlTJIEC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
   },
 
   english:{
@@ -158,9 +157,9 @@ let data={
     </p>`,
     competenze: `<h3>TECHNICAL SKILLS</h3>
     <ul>
-        <li>Proficient in programming languages such as <u>Java, JavaScript, Python, C, C++, HTML</u></li>
-        <li>Calculating numbers</li>
-        <li>Speak fluently multiple languages including Italian, English, Chinese</li>
+        <li>Proficient in programming languages such as <u>Java, JavaScript, Python, C, C++, HTML</u>;</li>
+        <li>Calculating numbers;</li>
+        <li>Speak fluently multiple languages including Italian, English, Chinese.</li>
     </ul>
     <h3>INTERPERSONAL SKILLS</h3>
     <ul>
@@ -170,8 +169,8 @@ let data={
     </ul>
     </p>`,
     progetti: `<strong>PROJECTS PARTECIPATED:</strong><ul>
-      <li>MOVE</li>
-      <li>INFORMATICA X GIOCO</li>
+      <li>MOVE;</li>
+      <li>INFORMATICA X GIOCO.</li>
     </ul>`,
     certificati: `<strong>CERTIFICATIONS RECEIVED:</strong><ul>
       <li>Security certificate(2024);</li>
@@ -186,7 +185,8 @@ let data={
     su_di_me: `<p>Hi I am Chen Federico Xin, a student passionate about computer science and technology. I am very glad to see you on my website and I would like to share my story.
     Since I was a child, I have been fascinated by how computers work and how they can be used to solve problems.
     I am currently attending the ITI Francesco Severi located in Padua, where I am expanding my knowledge in programming, networks, and software development.
-    For other information, you can contact me through the email <u>chenxin20080501@gmail.com</u> or through other contacts provided in my CV</p>`
+    For other information, you can contact me through the email <u>chenxin20080501@gmail.com</u> or through other contacts provided in my CV.</p>`
+    ,video: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Tv-g2hVhpUo?si=YL0CGM0IBk4_lpuZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
   }
 }
 function cambiaLingua(lang) {
@@ -220,8 +220,13 @@ function cambiaLingua(lang) {
     if (key && data[lang][key]) {
       p.innerHTML = data[lang][key];
     }
+  
   });
+  const videoFrame = document.getElementById("video");
 
+  if (videoFrame && data[lang]['video']) {
+    videoFrame.src = `https://www.youtube.com/embed/${data[lang]['video']}`;
+  }
 }
 
 
