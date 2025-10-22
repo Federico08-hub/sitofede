@@ -145,7 +145,7 @@ let data={
     titoloProgetti: "PROJECTS",
     titoloCertificati: "CERTIFICATES",
     titoloDocumenti: "DOCUMENTS",
-    titoloSuDiMe: "ABOUT ME",
+    titoloSuDiMe: "ABOUT MYSELF",
     educazione: `<h3>ITI FRANCESCO SEVERI of Padua</h3>
     <i>2022 - current</i><br>
     <p>The ITI Severi in Padua is a technical institute located in Padua that trains students in the fields of Information Technology, Mechanics, and Electronics.
